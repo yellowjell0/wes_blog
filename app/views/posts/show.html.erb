@@ -1,8 +1,18 @@
-<p>
+<!-- <p>
   <strong>Title:</strong>
   <%= @post.title %>
 </p>
 <p>
   <%= @post.body %>
-</p>
+
+</p> -->
+<div class="col-sm-11 col-xs-12 blog-content">
+  <h2 class="text-center"><%= @post.title %></h2>
+  <h5 class="text-center"><%= @post.created_at.strftime('%b %d, %Y') %></h5>
+  <div><%= raw @post.body %></div>
+</div>
 <%= link_to 'Back', posts_path %>
+<%= link_to 'Edit', edit_post_path(@post) %>
+<%= link_to 'Delete', post_path(@post),
+                      method: :delete,
+                      data: { confirm: 'Are You Sure?' } %>
