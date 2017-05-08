@@ -1,0 +1,13 @@
+<h1>All of my posts</h1>
+<table>
+  <tr>
+    <th>Title</th>
+  </tr>
+  </tr>
+  <% @posts.each do |post| %>
+  <tr>
+    <td><%= post.title %></td>
+    <td><%= link_to 'View', post_path(post) %></td>
+  </tr>
+  <% end %>
+</table>
